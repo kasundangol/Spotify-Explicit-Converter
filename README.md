@@ -1,6 +1,6 @@
 # Spotify Clean Playlist Maker
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YOUR-USERNAME/YOUR-REPO/blob/main/Spotify_Clean_Playlist_Maker.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kasundangol10-star/Spotify-Explicit-Converter/blob/main/Spotify_Clean_Playlist_Maker.ipynb)
 
 Make a clean (non-explicit) copy of a Spotify playlist you own. It runs in your browser on Google Colab, so there is nothing to install on your computer.
 
