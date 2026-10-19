@@ -1,6 +1,6 @@
 # Spotify Clean Playlist Maker
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kasundangol10-star/Spotify-Explicit-Converter/blob/main/Spotify_Clean_Playlist_Maker.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kasundangol/Spotify-Explicit-Converter/blob/main/Spotify_Clean_Playlist_Maker.ipynb)
 
 Make a clean (non-explicit) copy of a Spotify playlist you own. It runs in your browser on Google Colab, so there is nothing to install on your computer.
 
@@ -18,22 +18,38 @@ Some songs simply have no clean version on Spotify, so expect some to come up em
 
 ## What you need
 
-- A Spotify account
+- A Spotify **Premium** account (Spotify now requires Premium to create and use developer apps)
 - A Google account (for Colab)
 - A playlist **you own** (if it is someone else's, first copy its songs into a new playlist of your own: select all songs, Add to playlist, New playlist)
 
 ## One-time setup
 
-1. Create an app at [developer.spotify.com/dashboard](https://developer.spotify.com/dashboard).
-   - Set the **Redirect URI** to exactly `http://127.0.0.1:8888/callback`
-   - Tick **Web API**
-   - Note: Spotify may require a Premium account to create and use developer apps. Check their current requirements.
-2. Open the app's **Settings** and copy the **Client ID** and **Client secret**.
-3. Click the **Open in Colab** badge above.
-4. In Colab, click the **key icon** (Secrets) in the left sidebar and add two secrets:
+### Part 1: Create a Spotify app (about 5 minutes)
+
+Spotify only lets registered apps talk to your account, so you create a small private app of your own. It is free, and only you will use it.
+
+1. Go to [developer.spotify.com/dashboard](https://developer.spotify.com/dashboard) and log in with your Premium Spotify account. Accept the Terms of Service if asked.
+2. Click **Create app**.
+3. Fill in the form:
+   - **App name**: anything, for example `Clean Playlist Maker`
+   - **App description**: anything, for example `Makes clean copies of my playlists`
+   - **Website**: leave blank
+   - **Redirect URIs**: type `http://127.0.0.1:8888/callback` and click **Add**. It must show up in the list under the box. Use `127.0.0.1`, not `localhost`, and copy it exactly.
+   - **Which API/SDKs are you planning to use?**: tick **Web API**
+   - Tick the box to agree to Spotify's Developer Terms
+4. Click **Save**.
+5. Open your new app and click **Settings** (top right).
+6. Copy your **Client ID**. Then click **View client secret** and copy the **Client secret** as well.
+
+Keep the client secret private. Treat it like a password.
+
+### Part 2: Save your details in Colab
+
+1. Click the **Open in Colab** badge at the top of this page.
+2. In Colab, click the **key icon** (Secrets) in the left sidebar and add two secrets:
    - `SPOTIFY_CLIENT_ID` with your Client ID
    - `SPOTIFY_CLIENT_SECRET` with your client secret
-5. Switch on **Notebook access** for both.
+3. Switch on **Notebook access** for both.
 
 Your credentials are stored in your own Google account, not in the notebook, so they are not shared with anyone who opens or copies it.
 
